@@ -1,12 +1,12 @@
 on: [push]
 
 jobs:
-  version-matrix:
+  build:
     name: Set up Python on ${{ matrix.operating_system }} with Python ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.operating_system }}
     strategy:
       matrix:
-        os : [ubuntu-latest, macos-12, windows-latest]
+        operating_system: [ubuntu-latest, macos-12, windows-latest]
         py-version: [3.7, 3.8, 3.9]
 
     steps:
